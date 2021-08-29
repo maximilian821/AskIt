@@ -1,0 +1,8 @@
+<% currently_at 'Questions' %>
+
+<h2 class="mb-4"><%= @question.title %></h2>
+<time datetime="<%= @question.formatted_created_at %>"><%= @question.formatted_created_at %></time>
+<div class="lead my-3"><%= sanitize @question.body %></div>
+<%= link_to 'Edit', edit_question_path(@question), class: 'btn btn-sm btn-secondary' %>
+<%= link_to 'Delete', question_path(@question), data: {method: :delete, confirm: 'Are you sure?'}, class: 'btn btn-sm btn-danger' %>
+<hr>

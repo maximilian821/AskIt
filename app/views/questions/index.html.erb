@@ -1,0 +1,19 @@
+<% provide :page_title, 'Questions' %>
+<% currently_at 'Questions' %>
+
+<h1 class="mb-4">Questions</h1>
+
+<% @questions.each do |question| %>
+  <article class="card mb-2">
+    <div class="card-body">
+      <h4><%= question.title %></h4>
+      <section class="card-text">
+        <time datetime="<%= question.formatted_created_at %>"><small><%= question.formatted_created_at %></small></time>
+        <div class="my-2"><%= truncate sanitize(question.body), length: 150 %></div>
+      </section>
+      <%= link_to 'Show', question_path(question), class: 'btn btn-sm btn-primary' %>
+      <%= link_to 'Edit', edit_question_path(question), class: 'btn btn-sm btn-secondary' %>
+      <%= link_to 'Delete', question_path(question), data: {method: :delete, confirm: 'Are you sure?'}, class: 'btn btn-sm btn-danger' %>
+    </div>
+  </article>
+<% end %>

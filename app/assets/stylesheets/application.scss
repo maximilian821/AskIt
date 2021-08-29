@@ -1,1 +1,20 @@
 @import 'bootstrap';
+
+.field_with_errors {
+  .form-control {
+    border-color: $red;
+  }
+  label {
+    color: $red;
+  }
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.61);
+  transition: 0.2s;
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: white;
+  background-color: rgb(65, 65, 65);
+}
