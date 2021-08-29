@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+  
   def currently_at(current_page = '')
     render partial: 'shared/navbar', locals: { current_page: current_page }
   end

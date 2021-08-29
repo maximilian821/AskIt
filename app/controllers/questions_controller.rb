@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   before_action :set_question!, only: %i[show edit update destroy]
 
   def index
-    @questions = Question.all
+    @pagy, @questions = pagy Question.order('created_at DESC')
   end
 
   def show
