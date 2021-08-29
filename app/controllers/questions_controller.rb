@@ -6,6 +6,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @answer = @question.answers.build
+    @pagy, @answers = pagy @question.answers.all
   end
 
   def new

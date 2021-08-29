@@ -1,0 +1,10 @@
+<article class="card mb-2" id="answer-<%= answer.id %>">
+  <div class="card-body">
+    <section class="card-text">
+      <p><%= answer.body %></p>
+      <p><%= answer.formatted_created_at %></p>
+      <%= link_to 'Edit answer', edit_question_answer_path(question, answer), class: 'btn btn-secondary btn-sm' %>
+      <%= link_to 'Delete answer', question_answer_path(question, answer), data: {method: :delete, confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %>
+    </section>
+  </div>
+</article>

@@ -1,0 +1,13 @@
+<%= render 'shared/errors', object: @answer %>
+
+<%= form_with model: [@question, @answer] do |f| %>
+  <div class="mb-3 row">
+    <div class="col-sm-1 form-label">
+      <%= f.label :comment %>
+    </div>
+    <div class="col-sm-11">
+      <%= f.text_area :body, class: 'form-control' %>
+    </div>
+  </div>
+  <%= f.submit 'Submit answer!', class: 'btn btn-primary' %>
+<% end %>
